@@ -17,7 +17,7 @@
 -- [Screen]
 -- [Disk Drive]
 -- [Floor]
-
+local keyboard = require("keyboard")
 local component = require("component")
 local sides = require("sides")
 local gpu = component.gpu
@@ -27,8 +27,9 @@ local status
 local currenttime
 local signal
 
+gpu.setResolution(24,10)
 
-while(true)
+while not keyboard.isKeyDown(keyboard.keys.space)
 do
   gpu.fill(1, 1, w, h, " ") -- clears the screen
   currenttime = tonumber(os.date("%H"))
