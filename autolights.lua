@@ -54,6 +54,9 @@ do
   gpu.set(1,2,"Current Hour   : " .. currenttime)
   gpu.set(1,3,"Light Status   : " .. status)
   gpu.set(1,4,"Signal Strength: " .. signal)
+  gpu.set(1,6,"Press [Space] to exit")
 
   os.sleep(1)
 end
+
+gpu.setResolution(80,25)
