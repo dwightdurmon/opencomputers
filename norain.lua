@@ -11,16 +11,19 @@
 
 local keyboard = require("keyboard")
 local debug = require("component").debug
+local world = debug.getWorld()
 local gpu = require("component").gpu
 local status
+local w, h = gpu.getResolution()
 
 gpu.setResolution(24,10)
 
 while not keyboard.isKeyDown(keyboard.keys.space)
 do
-  if debug.isRaining() then
+  gpu.fill(1, 1, w, h, " ")
+  if world.isRaining() then
     status = "Raining"
-    debug.setRaining(false)
+    world.setRaining(false)
   else
     status = "Clear"
   end
