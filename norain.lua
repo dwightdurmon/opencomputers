@@ -27,8 +27,8 @@ do
   else
     status = "Clear"
   end
-  gpu.set(1,1,"Weather Automation System")
-  gpu.set(1,3,"Weather   : " .. status)
+  gpu.set(1,1,"No Rain Enabled")
+  gpu.set(1,3,"Weather : " .. status)
   gpu.set(1,6,"Press [Space] to exit")
 
   os.sleep(5)
